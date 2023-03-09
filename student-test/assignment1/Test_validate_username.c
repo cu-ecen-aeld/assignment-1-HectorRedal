@@ -18,5 +18,8 @@ void test_validate_my_username()
      * TODO: Replace the line below with your code here as described above to verify your /conf/username.txt 
      * config file and my_username() functions are setup properly
      */
-    TEST_ASSERT_TRUE_MESSAGE(false,"AESD students, please fix me!");
+    FILE* theFile_p = fopen("conf/username.txt","r");
+    char word[100];
+    fscanf(theFile_p, "%s", word);
+    TEST_ASSERT_EQUAL_STRING_MESSAGE(word, my_username(), "Name does not match");
 }

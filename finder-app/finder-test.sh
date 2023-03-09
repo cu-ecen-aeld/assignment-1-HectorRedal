@@ -4,6 +4,7 @@
 
 set -e
 set -u
+set -x
 
 NUMFILES=10
 WRITESTR=AELD_IS_FUN
@@ -34,7 +35,7 @@ rm -rf "${WRITEDIR}"
 # create $WRITEDIR if not assignment1
 assignment=`cat ../conf/assignment.txt`
 
-if [ $assignment != 'assignment1' ]
+if [ $assignment = 'assignment1' ]
 then
 	mkdir -p "$WRITEDIR"
 
